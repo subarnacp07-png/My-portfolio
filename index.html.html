@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Subarna C P | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ef;
+  --card:#fffdf9;
+  --text:#252525;
+  --muted:#66615a;
+  --accent:#7b5e3b;
+  --accent-dark:#5d452b;
+  --accent-soft:#eee4d6;
+  --line:#ded4c7;
+  --shadow:rgba(70,55,38,.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body{
+  font-family:"Times New Roman", Times, serif;
+  background:
+    radial-gradient(circle at top left, rgba(238,228,214,.65), transparent 32%),
+    linear-gradient(135deg,#faf8f4,#f3eee7);
+  color:var(--text);
+  line-height:1.7;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:center;
+  gap:42px;
+  padding:17px 20px;
+  background:rgba(255,253,249,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 18px var(--shadow);
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:16px;
+  font-weight:bold;
+  position:relative;
+  transition:.25s ease;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.25s ease;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+header{
+  text-align:center;
+  padding:105px 20px 115px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(238,228,214,.95),rgba(255,253,249,.98) 55%,rgba(224,211,194,.8));
+  border-bottom:1px solid var(--line);
+}
+
+header::before,
+header::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+header::before{
+  width:280px;
+  height:280px;
+  left:-110px;
+  top:-100px;
+  background:rgba(123,94,59,.10);
+}
+
+header::after{
+  width:360px;
+  height:360px;
+  right:-150px;
+  bottom:-190px;
+  background:rgba(123,94,59,.12);
+}
+
+header h1{
+  position:relative;
+  font-size:clamp(42px,7vw,68px);
+  line-height:1.1;
+  letter-spacing:.5px;
+  color:var(--text);
+  margin-bottom:16px;
+}
+
+header h1::after{
+  content:"";
+  display:block;
+  width:70px;
+  height:3px;
+  margin:18px auto 0;
+  background:var(--accent);
+  border-radius:5px;
+}
+
+header p{
+  position:relative;
+  color:var(--muted);
+  font-size:20px;
+  margin-top:18px;
+  font-style:italic;
+}
+
+
+.btn{
+  position:relative;
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 30px;
+  border:1px solid var(--accent);
+  border-radius:30px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:bold;
+  box-shadow:0 8px 20px var(--shadow);
+  transition:.25s ease;
+}
+
+.linkedin-btn{margin-left:10px;background:transparent;color:var(--accent-dark);}
+.linkedin-btn:hover{background:var(--accent);color:#fff;}
+
+.btn:hover{
+  background:var(--accent-dark);
+  transform:translateY(-3px);
+  box-shadow:0 12px 24px var(--shadow);
+}
+
+section{
+  max-width:900px;
+  margin:42px auto;
+  padding:38px 42px;
+  background:rgba(255,253,249,.96);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 10px 30px var(--shadow);
+  position:relative;
+}
+
+section::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:22px;
+  bottom:22px;
+  width:4px;
+  border-radius:5px;
+  background:var(--accent);
+}
+
+h2{
+  font-size:29px;
+  margin-bottom:17px;
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+h2::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,var(--line),transparent);
+}
+
+p{
+  color:var(--muted);
+  font-size:17px;
+}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:10px;
+}
+
+.skill{
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  padding:9px 19px;
+  border-radius:25px;
+  font-size:16px;
+  font-weight:bold;
+  border:1px solid #d8c8b5;
+  transition:.25s ease;
+}
+
+.skill:hover{
+  background:var(--accent);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:0 7px 15px var(--shadow);
+}
+
+.contact p{
+  margin:10px 0;
+}
+
+.contact a{
+  color:var(--accent-dark);
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.contact a:hover{
+  text-decoration:underline;
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px;
+  background:#29251f;
+  color:#fff;
+  margin-top:60px;
+}
+
+footer p{
+  color:#e9e2d8;
+  font-size:15px;
+}
+
+@media(max-width:600px){
+  nav{gap:22px;padding:15px 10px}
+  nav a{font-size:14px}
+  header{padding:80px 18px 90px}
+  header h1{font-size:42px}
+  header p{font-size:17px}
+  section{
+    margin:28px 14px;
+    padding:30px 27px;
+  }
+  h2{font-size:25px}
+}
+</style>
+</head>
+<body>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header>
+<h1>Subarna C P</h1>
+  <p>M.Sc Software Systems Student | Aspiring Software Developer</p>
+  <a class="btn" href="#contact">Get in Touch</a>
+  <a class="btn linkedin-btn" href="https://www.linkedin.com/in/subarna-chandramohan-55ab46375?utm_source=chatgpt.com" target="_blank" rel="noopener">LinkedIn</a>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I am Subarna C P, a second-year M.Sc Software Systems student at Coimbatore Institute of Technology. I am interested in software development, web technologies, databases and artificial intelligence.</p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="skills">
+    <div class="skill">C++</div><div class="skill">Java</div><div class="skill">Python</div>
+    <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
+    <div class="skill">MongoDB</div><div class="skill">Git &amp; GitHub</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:subarnachandramohan@gmail.com">subarnachandramohan@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/" target="_blank" rel="noopener">GitHub Profile</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/subarna-chandramohan-55ab46375" target="_blank" rel="noopener">https://www.linkedin.com/in/subarna-chandramohan-55ab46375</a></p>
+</section>
+
+<footer><p>© 2026 Subarna C P. All Rights Reserved.</p></footer>
+</body>
+</html>
